@@ -1867,7 +1867,7 @@ export type getStandardPageMetaDataQuery = { __typename?: 'Query', StandardPage?
           & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
         ) | null } | null } | null> | null } | null };
 
-export type StandardPageDataFragment = { __typename?: 'StandardPage', sptitle?: string | null, spsubtitle?: string | null, spimage?: (
+export type StandardPageDataFragment = { __typename?: 'StandardPage', sptitle?: string | null, spsubtitle?: string | null, age?: number | 0, spimage?: (
     { __typename?: 'ContentReference' }
     & { ' $fragmentRefs'?: { 'ReferenceDataFragment': ReferenceDataFragment } }
   ) | null, spdescription?: { __typename?: 'RichText', json?: any | null } | null } & { ' $fragmentName'?: 'StandardPageDataFragment' };
