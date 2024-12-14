@@ -417,6 +417,7 @@ export const StandardPageDataFragmentDoc = gql`
     fragment StandardPageData on StandardPage {
   sptitle: StandardPageHeading
   spsubtitle: StandardSubHeading
+  age: Age
   spimage: StandardPromoImage {
     ...ReferenceData
   }

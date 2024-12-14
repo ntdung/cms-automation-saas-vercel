@@ -21,7 +21,7 @@ import { toValidOpenGraphType } from "@/lib/opengraph";
 
 export const StandardPage: OptimizelyNextPage<StandardPageDataFragment> = ({
   contentLink,
-  data: { sptitle: title, spimage: image, spdescription: description, spsubtitle: subtitle }
+  data: { sptitle: title, spimage: image, spdescription: description, spsubtitle: subtitle, age: age }
 }) => {
   const { factory } = getServerContext()
   return (
@@ -33,6 +33,7 @@ export const StandardPage: OptimizelyNextPage<StandardPageDataFragment> = ({
             <div className="prose max-w-[960px] prose-h2:text-[36px] prose-h2:leading-[40px] prose-h2:mb-[24px] prose-h2:mt-[48px] prose-a:text-azure prose-a:font-bold prose-a:no-underline hover:prose-a:underline focus:prose-a:underline prose-img:rounded-[40px] prose-img:p-[20px] prose-img:border-2 dark:text-ghost-white">
               <CmsEditable cmsFieldName="StandardPageHeading" as="h1" className="mb-[24px] text-[48px]">{ title ?? "" }</CmsEditable>
               <CmsEditable cmsFieldName="StandardSubHeading" as="p" className="text-[30px] leading-[36px] mt-[24px] mb-20">{ subtitle ?? "" }</CmsEditable>
+              <CmsEditable cmsFieldName="Age" as="p" className="text-[30px] leading-[36px] mt-[24px] mb-20">{ age ?? "" }</CmsEditable>
               <CmsEditable cmsFieldName="MainBody" as={ RichText } className="dark:!text-ghost-white [&>*]:dark:!text-ghost-white" text={ description?.json } factory={ factory } />
               <div className="col-span-12 lg:col-span-10 lg:col-start-2 mx-auto border-t-2 my-64"></div>
             </div>
