@@ -1,14 +1,13 @@
-query getStandardPageMetaData($key: String!, $version: String, $locale: [Locales]) {
-  StandardPage (
-    where: {
-      _metadata: {
-        key: { eq: $key }
-        version: { eq: $version }
-      }
-    }
+query getStandardPageMetaData(
+  $key: String!
+  $version: String
+  $locale: [Locales]
+) {
+  StandardPage(
+    where: { _metadata: { key: { eq: $key }, version: { eq: $version } } }
     locale: $locale
   ) {
-  	pages: items {
+    pages: items {
       _metadata {
         displayName
         key
@@ -16,6 +15,7 @@ query getStandardPageMetaData($key: String!, $version: String, $locale: [Locales
         locale
       }
       StandardPageHeading
+      Age
       StandardPromoImage {
         ...ReferenceData
       }
@@ -27,6 +27,6 @@ query getStandardPageMetaData($key: String!, $version: String, $locale: [Locales
         }
         GraphType
       }
-    }  
+    }
   }
 }

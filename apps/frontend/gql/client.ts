@@ -417,7 +417,7 @@ export const StandardPageDataFragmentDoc = gql`
     fragment StandardPageData on StandardPage {
   sptitle: StandardPageHeading
   spsubtitle: StandardSubHeading
-  age: Age
+  spage: Age
   spimage: StandardPromoImage {
     ...ReferenceData
   }
@@ -694,6 +694,7 @@ export const getStandardPageMetaDataDocument = gql`
         locale
       }
       StandardPageHeading
+      Age
       StandardPromoImage {
         ...ReferenceData
       }
